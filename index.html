@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FORANGEL desarrolla páginas web, sistemas de gestión y soluciones de software a medida para negocios y emprendedores.">
+  <meta name="theme-color" content="#0B1F3B">
+  <title>FORANGEL | Software a medida y desarrollo web</title>
+  <link rel="icon" href="Images/Logo/Icono.ico" sizes="any">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script>
+    // Recuperar el tema antes de dibujar el sitio y evitar un destello de color.
+    try {
+      const guardado = localStorage.getItem('tema-forangel');
+      if (guardado === 'dark' || guardado === 'light') {
+        document.documentElement.dataset.theme = guardado;
+      }
+    } catch (_) {}
+  </script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="FORANGEL, volver al inicio">
+        <!-- Conservá aquí el archivo de tu logo. Si falta, aparece el nombre como respaldo. -->
+        <img id="logoMarca" src="Images/Logo/Logo modo claro.png" alt="FORANGEL">
+        <span class="logo-fallback" id="logoFallback" hidden>FORANGEL<span class="logo-punto">.</span></span>
+      </a>
+
+      <nav class="nav" id="menuPrincipal" aria-label="Navegación principal">
+        <div class="nav__cabecera">
+          <span>Menú</span>
+          <button class="nav__cerrar" id="cerrarMenu" type="button" aria-label="Cerrar menú">
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+        <ul>
+          <li><a href="index.html" class="activo" aria-current="page"><i class="bi bi-house" aria-hidden="true"></i>Inicio</a></li>
+          <li><a href="servicios.html"><i class="bi bi-code-slash" aria-hidden="true"></i>Servicios</a></li>
+          <li><a href="proyectos.html"><i class="bi bi-grid" aria-hidden="true"></i>Proyectos</a></li>
+          <li><a href="nosotros.html"><i class="bi bi-people" aria-hidden="true"></i>Nosotros</a></li>
+        </ul>
+        <a href="contacto.html" class="nav__contacto-movil">
+          <i class="bi bi-chat-dots" aria-hidden="true"></i> Consulta directa
+        </a>
+      </nav>
+
+      <div class="config">
+        <button id="cambiarTema" class="boton-icono" type="button" aria-label="Cambiar a modo claro" title="Cambiar tema">
+          <span class="icono-tema" aria-hidden="true"></span>
+        </button>
+        <a href="contacto.html" class="btn-contacto">Consulta directa <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        <button id="abrirMenu" class="boton-hamburguesa" type="button" aria-label="Abrir menú" aria-controls="menuPrincipal" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="fondoMenu" class="fondo-menu" hidden></div>
+
+  <main>
+    <section class="hero contenedor" aria-labelledby="tituloPrincipal">
+      <div class="hero__contenido">
+        <div class="etiqueta"><span class="etiqueta__punto"></span> DESARROLLO DE SOFTWARE A MEDIDA</div>
+        <h1 id="tituloPrincipal">Tus ideas merecen <span>soluciones reales.</span></h1>
+        <p class="hero__descripcion">En FORANGEL diseñamos y desarrollamos páginas web y software a medida para que negocios, profesionales y emprendedores tengan herramientas que se adapten a su trabajo.</p>
+        <div class="hero__acciones">
+          <a class="btn btn--primario" href="contacto.html">Contanos tu idea <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          <a class="btn btn--secundario" href="servicios.html">Explorar servicios <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="hero__categorias" aria-label="Áreas de trabajo">
+          <span><i class="bi bi-check-circle" aria-hidden="true"></i> Páginas web</span>
+          <span><i class="bi bi-check-circle" aria-hidden="true"></i> Sistemas a medida</span>
+          <span><i class="bi bi-check-circle" aria-hidden="true"></i> Automatización</span>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__luz" aria-hidden="true"></div>
+        <!-- Imagen transparente 3D que creamos para FORANGEL. Podés reemplazarla por otra manteniendo el nombre. -->
+        <img src="Images/hero-forangel.png" alt="Ilustración 3D de una laptop con herramientas de diseño, programación y desarrollo de software" fetchpriority="high">
+      </div>
+    </section>
+
+    <section class="seccion seccion--clara" aria-labelledby="queHacemos">
+      <div class="contenedor">
+        <div class="intro-seccion">
+          <p class="sobrelinea">QUÉ HACEMOS</p>
+          <h2 id="queHacemos">Tecnología pensada para <span>tu forma de trabajar.</span></h2>
+          <p>No se trata de sumar herramientas porque sí. Buscamos entender cada necesidad y transformarla en una solución útil, simple y fácil de utilizar.</p>
+        </div>
+        <div class="servicios-grid">
+          <article class="tarjeta-servicio">
+            <div class="tarjeta-servicio__icono"><i class="bi bi-window-stack" aria-hidden="true"></i></div>
+            <h3>Desarrollo web</h3>
+            <p>Sitios para mostrar tus servicios, presentar tu trabajo y facilitar que nuevos clientes te encuentren y contacten.</p>
+            <a href="servicios.html">Conocer el servicio <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="tarjeta-servicio">
+            <div class="tarjeta-servicio__icono"><i class="bi bi-kanban" aria-hidden="true"></i></div>
+            <h3>Sistemas de gestión</h3>
+            <p>Soluciones personalizadas para organizar información, productos, clientes o tareas de tu actividad.</p>
+            <a href="servicios.html">Conocer el servicio <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+          <article class="tarjeta-servicio">
+            <div class="tarjeta-servicio__icono"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></div>
+            <h3>Automatización</h3>
+            <p>Herramientas para reducir tareas repetitivas y dedicar más tiempo a lo importante de tu negocio.</p>
+            <a href="servicios.html">Conocer el servicio <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="negocios">
+      <div class="contenedor negocios">
+        <div class="negocios__intro">
+          <p class="sobrelinea">CERCANOS A TU NEGOCIO</p>
+          <h2 id="negocios">Una buena presencia digital puede empezar <span>por algo simple.</span></h2>
+          <p>También creamos páginas web para profesionales y emprendimientos locales. No necesitás un sistema enorme: necesitás una solución adecuada para lo que hacés.</p>
+          <a class="enlace-flecha" href="contacto.html">Quiero una página para mi negocio <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="negocios__lista">
+          <article class="negocio-item"><span class="negocio-item__icono"><i class="bi bi-scissors" aria-hidden="true"></i></span><div><h3>Barberías y peluquerías</h3><p>Servicios, precios, ubicación y vías de contacto en un solo lugar.</p></div><i class="bi bi-arrow-up-right negocio-item__flecha" aria-hidden="true"></i></article>
+          <article class="negocio-item"><span class="negocio-item__icono"><i class="bi bi-brush" aria-hidden="true"></i></span><div><h3>Maquillistas y profesionales de belleza</h3><p>Un espacio para exhibir trabajos, servicios y recibir consultas.</p></div><i class="bi bi-arrow-up-right negocio-item__flecha" aria-hidden="true"></i></article>
+          <article class="negocio-item"><span class="negocio-item__icono"><i class="bi bi-shop" aria-hidden="true"></i></span><div><h3>Pequeños emprendimientos</h3><p>Catálogos, presentaciones y conexiones sencillas con tus clientes.</p></div><i class="bi bi-arrow-up-right negocio-item__flecha" aria-hidden="true"></i></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion--clara" aria-labelledby="procesoTitulo">
+      <div class="contenedor">
+        <div class="intro-seccion intro-seccion--centrada">
+          <p class="sobrelinea">CÓMO TRABAJAMOS</p>
+          <h2 id="procesoTitulo">De la idea a una solución <span>con sentido.</span></h2>
+        </div>
+        <div class="pasos">
+          <article class="paso"><span class="paso__numero">01</span><div class="paso__icono"><i class="bi bi-chat-left-text" aria-hidden="true"></i></div><h3>Escuchamos</h3><p>Conversamos sobre tu necesidad, tus objetivos y cómo trabajás hoy.</p></article>
+          <article class="paso"><span class="paso__numero">02</span><div class="paso__icono"><i class="bi bi-bezier2" aria-hidden="true"></i></div><h3>Diseñamos</h3><p>Definimos una propuesta clara y una experiencia fácil de utilizar.</p></article>
+          <article class="paso"><span class="paso__numero">03</span><div class="paso__icono"><i class="bi bi-code-square" aria-hidden="true"></i></div><h3>Desarrollamos</h3><p>Construimos la solución con atención al funcionamiento y los detalles.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion--cta" aria-labelledby="ctaTitulo">
+      <div class="contenedor">
+        <div class="cta">
+          <div class="cta__contenido">
+            <p class="sobrelinea">HABLEMOS DE TU PROYECTO</p>
+            <h2 id="ctaTitulo">Cada gran solución empieza con <span>una conversación.</span></h2>
+            <p>Contanos qué querés crear o qué problema necesitás resolver. Podemos pensar juntos una solución a tu medida.</p>
+          </div>
+          <a class="btn btn--primario" href="contacto.html">Iniciar una consulta <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__principal">
+      <div>
+        <strong class="footer__marca">FORANGEL<span>.</span></strong>
+        <p>Software que facilita, soluciones que evolucionan.</p>
+      </div>
+      <div class="footer__links">
+        <a href="servicios.html">Servicios</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+    <div class="contenedor footer__inferior">
+      <small>© <span id="anioActual"></span> FORANGEL.</small>
+      <small>Desarrollo de software a medida · Uruguay</small>
+    </div>
+  </footer>
+</body>
+</html>
