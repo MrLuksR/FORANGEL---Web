@@ -1,10 +1,4 @@
 'use strict';
-
-// ============================================================
-// FORANGEL | JAVASCRIPT DEL SITIO
-// ============================================================
-
-
 // ============================================================
 // 1. MODO CLARO / OSCURO
 // ============================================================
@@ -17,6 +11,7 @@ const logo = document.getElementById('logoMarca');
 const logoSimple = document.getElementById('logoSimple');
 const footerLogo = document.getElementById('footer__logo');
 const footerInstagram = document.getElementById('footer__instagram');
+const favicon = document.getElementById('favicon');
 
 function actualizarBotonTema() {
     const oscuro = raiz.dataset.theme === 'dark';
@@ -43,6 +38,10 @@ function actualizarBotonTema() {
     footerInstagram.src = oscuro
         ? 'Images/Logo/Instagram Logo.png'
         : 'Images/Logo/Instagram Logo oscuro.png';
+
+    favicon.href = oscuro
+        ? 'Images/Logo/Icono oscuro.ico'
+        : 'Images/Logo/Icono claro.ico';
 
     document
         .querySelector('meta[name="theme-color"]')
